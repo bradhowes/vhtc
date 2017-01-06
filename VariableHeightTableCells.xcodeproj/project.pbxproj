@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		BD797F241E1EF6510044AFE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD797F231E1EF6510044AFE8 /* AppDelegate.swift */; };
-		BD797F261E1EF6510044AFE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD797F251E1EF6510044AFE8 /* ViewController.swift */; };
+		BD797F261E1EF6510044AFE8 /* VariableHeightTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD797F251E1EF6510044AFE8 /* VariableHeightTableViewController.swift */; };
 		BD797F291E1EF6510044AFE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD797F271E1EF6510044AFE8 /* Main.storyboard */; };
 		BD797F2B1E1EF6510044AFE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD797F2A1E1EF6510044AFE8 /* Assets.xcassets */; };
 		BD797F2E1E1EF6510044AFE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD797F2C1E1EF6510044AFE8 /* LaunchScreen.storyboard */; };
+		BD797F361E1EF7410044AFE8 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD797F351E1EF7410044AFE8 /* Cell.xib */; };
+		BD797F381E1EF9350044AFE8 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD797F371E1EF9350044AFE8 /* Cell.swift */; };
+		BD797F3C1E1F89850044AFE8 /* FullTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD797F3B1E1F89850044AFE8 /* FullTextView.swift */; };
+		BD9D947D1E1FCDA200D329CB /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D947C1E1FCDA200D329CB /* DataSource.swift */; };
+		BD9D947F1E1FF50F00D329CB /* HeightCalculationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D947E1E1FF50F00D329CB /* HeightCalculationStrategy.swift */; };
+		BD9D94811E204F1100D329CB /* LoremIpsum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D94801E204F1100D329CB /* LoremIpsum.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BD797F201E1EF6510044AFE8 /* VariableHeightTableCells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VariableHeightTableCells.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD797F231E1EF6510044AFE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BD797F251E1EF6510044AFE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BD797F251E1EF6510044AFE8 /* VariableHeightTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableHeightTableViewController.swift; sourceTree = "<group>"; };
 		BD797F281E1EF6510044AFE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BD797F2A1E1EF6510044AFE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD797F2D1E1EF6510044AFE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD797F2F1E1EF6510044AFE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD797F351E1EF7410044AFE8 /* Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
+		BD797F371E1EF9350044AFE8 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		BD797F3B1E1F89850044AFE8 /* FullTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullTextView.swift; sourceTree = "<group>"; };
+		BD9D947C1E1FCDA200D329CB /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		BD9D947E1E1FF50F00D329CB /* HeightCalculationStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeightCalculationStrategy.swift; sourceTree = "<group>"; };
+		BD9D94801E204F1100D329CB /* LoremIpsum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoremIpsum.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +67,14 @@
 			isa = PBXGroup;
 			children = (
 				BD797F231E1EF6510044AFE8 /* AppDelegate.swift */,
-				BD797F251E1EF6510044AFE8 /* ViewController.swift */,
 				BD797F271E1EF6510044AFE8 /* Main.storyboard */,
+				BD797F351E1EF7410044AFE8 /* Cell.xib */,
+				BD797F371E1EF9350044AFE8 /* Cell.swift */,
+				BD9D947C1E1FCDA200D329CB /* DataSource.swift */,
+				BD9D947E1E1FF50F00D329CB /* HeightCalculationStrategy.swift */,
+				BD797F3B1E1F89850044AFE8 /* FullTextView.swift */,
+				BD797F251E1EF6510044AFE8 /* VariableHeightTableViewController.swift */,
+				BD9D94801E204F1100D329CB /* LoremIpsum.swift */,
 				BD797F2A1E1EF6510044AFE8 /* Assets.xcassets */,
 				BD797F2C1E1EF6510044AFE8 /* LaunchScreen.storyboard */,
 				BD797F2F1E1EF6510044AFE8 /* Info.plist */,
@@ -125,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD797F2E1E1EF6510044AFE8 /* LaunchScreen.storyboard in Resources */,
+				BD797F361E1EF7410044AFE8 /* Cell.xib in Resources */,
 				BD797F2B1E1EF6510044AFE8 /* Assets.xcassets in Resources */,
 				BD797F291E1EF6510044AFE8 /* Main.storyboard in Resources */,
 			);
@@ -137,8 +156,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD797F261E1EF6510044AFE8 /* ViewController.swift in Sources */,
+				BD9D947D1E1FCDA200D329CB /* DataSource.swift in Sources */,
+				BD9D947F1E1FF50F00D329CB /* HeightCalculationStrategy.swift in Sources */,
+				BD9D94811E204F1100D329CB /* LoremIpsum.swift in Sources */,
+				BD797F3C1E1F89850044AFE8 /* FullTextView.swift in Sources */,
+				BD797F261E1EF6510044AFE8 /* VariableHeightTableViewController.swift in Sources */,
 				BD797F241E1EF6510044AFE8 /* AppDelegate.swift in Sources */,
+				BD797F381E1EF9350044AFE8 /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +228,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -248,7 +272,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -302,6 +326,7 @@
 				BD797F341E1EF6510044AFE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
