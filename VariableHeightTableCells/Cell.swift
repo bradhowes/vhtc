@@ -25,12 +25,12 @@ public final class Cell: UITableViewCell {
         self.heading.text = content.title
         self.content.text = content.text
         self.avatar.image = content.image
+        contentView.setNeedsLayout()
         return self
     }
 
     /// Calculate and return the height of this cell using whatever content is currently in the views.
     public var cellHeightForContent: CGFloat {
-        contentView.setNeedsLayout()
         contentView.layoutSubviews()
         return contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
     }
@@ -40,7 +40,6 @@ public final class Cell: UITableViewCell {
         didSet {
             contentView.frame = CGRect(x: 0.0, y: 0.0, width: cellWidth, height: 999.0)
             contentView.setNeedsLayout()
-            contentView.layoutSubviews()
         }
     }
 }

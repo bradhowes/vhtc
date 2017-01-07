@@ -26,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="144.80000000000001" y="791.15442278860576"/>
         </scene>
-        <!--Variable Height Table View Controller-->
+        <!--VHTC-->
         <scene sceneID="F24-q3-GpJ">
             <objects>
                 <tableViewController id="b2l-0o-VdA" customClass="VariableHeightTableViewController" customModule="VariableHeightTableCells" customModuleProvider="target" sceneMemberID="viewController">
@@ -39,7 +39,7 @@
                             <outlet property="delegate" destination="b2l-0o-VdA" id="2n3-ty-rfr"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="bzy-zf-98r"/>
+                    <navigationItem key="navigationItem" title="VHTC" id="bzy-zf-98r"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d5o-AI-qyC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -23,11 +23,10 @@ final public class VariableHeightTableViewController: UITableViewController {
         super.viewDidLoad()
 
         self.cellIdent = "Cell"
-        self.dataSource = DataSource(cellIdent: cellIdent, count: 100)
+        self.dataSource = DataSource(cellIdent: cellIdent, count: 10000)
         tableView.dataSource = dataSource
         tableView.register(UINib(nibName: cellIdent, bundle: nil), forCellReuseIdentifier: cellIdent)
-
-        heightCalculationStrategy = makeStrategy(useFast: false)
+        heightCalculationStrategy = makeStrategy(useFast: true)
     }
 
     /**
