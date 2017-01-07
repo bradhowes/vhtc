@@ -36,4 +36,4 @@ demands too much time before the table appears to the user.
 
 ## License
 
-This project is licensed under the terms of the [MIT license](blob/master/LICENSE).
+This project is licensed under the terms of the [MIT license](LICENSE.txt).
