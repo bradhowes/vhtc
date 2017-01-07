@@ -25,21 +25,21 @@ public final class Cell: UITableViewCell {
         self.heading.text = content.title
         self.content.text = content.text
         self.avatar.image = content.image
-        contentView.setNeedsLayout()
+        contentView.layoutIfNeeded()
         return self
     }
 
     /// Calculate and return the height of this cell using whatever content is currently in the views.
     public var cellHeightForContent: CGFloat {
-        contentView.layoutSubviews()
+        contentView.layoutIfNeeded()
         return contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
     }
 
     /// The current cell width. Adjust to recalculate cell heights.
     public var cellWidth: CGFloat = 0.0 {
         didSet {
-            contentView.frame = CGRect(x: 0.0, y: 0.0, width: cellWidth, height: 999.0)
-            contentView.setNeedsLayout()
+            contentView.frame = CGRect(x: 0.0, y: 0.0, width: cellWidth, height: 9999.0)
+            contentView.layoutIfNeeded()
         }
     }
 }
