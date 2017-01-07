@@ -12,7 +12,7 @@ import UIKit
  Derivation of UITextView which supports displaying all held content properly laid out using a fixed width and a 
  variable height.
  */
-final class FullTextView: UITextView, UITextViewDelegate {
+final class FullTextView: UITextView {
 
     /// Holds any calculated fitted size (see updateFittedSize() below).
     var fittedSize: CGSize? = nil
