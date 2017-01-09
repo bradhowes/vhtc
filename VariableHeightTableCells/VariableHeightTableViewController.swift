@@ -13,17 +13,17 @@ import UIKit
  to provide data for the table, and a height calculating strategy class which hopefully provides fast answers to the
  question of how high a cell is.
  */
-final public class VariableHeightTableViewController: UITableViewController {
+final class VariableHeightTableViewController: UITableViewController {
 
     private var cellIdent: String!
     private var dataSource: DataSource!
     private var heightCalculationStrategy: HeightCalculationStrategy!
 
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         self.cellIdent = "Cell"
-        self.dataSource = DataSource(cellIdent: cellIdent, count: 1000)
+        self.dataSource = DataSource(cellIdent: cellIdent, count: 100)
         tableView.dataSource = dataSource
         tableView.register(UINib(nibName: cellIdent, bundle: nil), forCellReuseIdentifier: cellIdent)
         heightCalculationStrategy = makeStrategy(useFast: true)
@@ -35,7 +35,7 @@ final public class VariableHeightTableViewController: UITableViewController {
 
      - parameter animated: true if the view will appear in an animation
      */
-    public override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         heightCalculationStrategy.cellWidth = view.frame.width
         super.viewWillAppear(animated)
     }
@@ -47,22 +47,22 @@ final public class VariableHeightTableViewController: UITableViewController {
      - parameter size: the new size for the view
      - parameter coordinator: the object that is managing the transformation
      */
-    public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         coordinator.animate(alongsideTransition: { _ in }) { _ in
             self.heightCalculationStrategy.cellWidth = size.width
         }
     }
 
-    public override func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return heightCalculationStrategy.getHeight(for: self.dataSource[indexPath.row], at: indexPath)
     }
 
-    public override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 

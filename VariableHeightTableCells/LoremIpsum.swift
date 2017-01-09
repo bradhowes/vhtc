@@ -14,22 +14,22 @@ import Foundation
 import CoreGraphics
 import UIKit
 
-public func randomInt(lowerBound: Int, upperBound: Int) -> Int {
-    precondition(lowerBound <= upperBound, "invalid bounds")
-    return Int(arc4random_uniform(UInt32(upperBound - lowerBound + 1))) + lowerBound
-}
-
-fileprivate extension Array {
-    func random() -> Element {
-        precondition(count > 0, "attempt to fetch element from empty array")
-        return self[randomInt(lowerBound: 0, upperBound: count - 1)]
-    }
-}
-
 fileprivate extension String {
     func split() -> [String] {
         return self.components(separatedBy: " ")
     }
+}
+
+//fileprivate extension Array {
+//    func random() -> Element {
+//        precondition(count > 0, "attempt to fetch element from empty array")
+//        return self[randomInt(lowerBound: 0, upperBound: count - 1)]
+//    }
+//}
+
+
+extension RandomGenerator {
+    mutating func pick<T>(_ seq: Array<T>) -> T { return seq[Int(randomHalfOpen() * Double(seq.count))] }
 }
 
 public class LoremIpsumGenerator {
@@ -53,13 +53,24 @@ public class LoremIpsumGenerator {
         "He awoke one day to find his pile of sausages missing. Roger the greedy boar with human eyes, had skateboarded into the forest & eaten them!"
     ]
 
+    private var randomGenerator: RandomGenerator
+
+    public init(randomGenerator: RandomGenerator = Xoroshiro()) {
+        self.randomGenerator = randomGenerator
+    }
+
+    public func randomInt(lowerBound: Int, upperBound: Int) -> Int {
+        precondition(lowerBound <= upperBound, "invalid bounds")
+        return Int(randomGenerator.randomClosed() * Double(upperBound - lowerBound)) + lowerBound
+    }
+
     public func word() -> String {
         return words(count: 1)
     }
 
     public func wordCollection(count: Int) -> [String] {
         precondition(count > 0, "invalid count")
-        return (0..<count).map { _ in LoremIpsumGenerator.kWords.random() }
+        return (0..<count).map { _ in randomGenerator.pick(LoremIpsumGenerator.kWords) }
     }
 
     public func words(count: Int) -> String {
@@ -96,16 +107,16 @@ public class LoremIpsumGenerator {
     }
 
     public func firstName() -> String {
-        return LoremIpsumGenerator.kFirstNames.random()
+        return randomGenerator.pick(LoremIpsumGenerator.kFirstNames)
     }
 
     public func lastName() -> String {
-        return LoremIpsumGenerator.kLastNames.random()
+        return randomGenerator.pick(LoremIpsumGenerator.kLastNames)
     }
 
     public func email() -> String {
-        let domain = LoremIpsumGenerator.kEmailDomains.random()
-        let delimiter = LoremIpsumGenerator.kEmailSeparators.random()
+        let domain = randomGenerator.pick(LoremIpsumGenerator.kEmailDomains)
+        let delimiter = randomGenerator.pick(LoremIpsumGenerator.kEmailSeparators)
         let addressComponents: [String] = {
             switch randomInt(lowerBound: 1, upperBound: 3) {
             case 1: return [lastName()]
@@ -117,7 +128,7 @@ public class LoremIpsumGenerator {
     }
 
     public func tweet() -> String {
-        return LoremIpsumGenerator.kTweets.random()
+        return randomGenerator.pick(LoremIpsumGenerator.kTweets)
     }
 
     public func date() -> Date {
@@ -173,7 +184,7 @@ public class LoremIpsumGenerator {
     }
 
     public func urlforAsyncImagePlaceholder(size: CGSize) -> URL? {
-        return urlforAsyncImagePlaceholder(size: size, service: ImageService.all.random())
+        return urlforAsyncImagePlaceholder(size: size, service: randomGenerator.pick(ImageService.all))
     }
 
     public func asyncImagePlaceholder(size: CGSize, service: ImageService, completion: @escaping (UIImage?)->()) {
@@ -200,6 +211,6 @@ public class LoremIpsumGenerator {
     }
 
     public func asyncImagePlaceholder(size: CGSize, completion: @escaping (UIImage?)->()) {
-        asyncImagePlaceholder(size: size, service: ImageService.all.random(), completion: completion)
+        asyncImagePlaceholder(size: size, service: randomGenerator.pick(ImageService.all), completion: completion)
     }
 }

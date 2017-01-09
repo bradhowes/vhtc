@@ -15,7 +15,7 @@ import UIKit
 final class FullTextView: UITextView {
 
     /// Holds any calculated fitted size (see updateFittedSize() below).
-    var fittedSize: CGSize? = nil
+    private var fittedSize: CGSize? = nil
 
     /// Override intrinsicContentSize to return calculated fittedSize if it exists
     override public var intrinsicContentSize: CGSize {

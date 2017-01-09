@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD5E4B821E22E80600AD8DF9 /* VariableHeightTableCellsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E4B811E22E80600AD8DF9 /* VariableHeightTableCellsUITests.swift */; };
+		BD5E4B8B1E22F0EB00AD8DF9 /* CwlRandom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD5E4B8A1E22F0EB00AD8DF9 /* CwlRandom.swift */; };
 		BD797F241E1EF6510044AFE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD797F231E1EF6510044AFE8 /* AppDelegate.swift */; };
 		BD797F261E1EF6510044AFE8 /* VariableHeightTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD797F251E1EF6510044AFE8 /* VariableHeightTableViewController.swift */; };
 		BD797F291E1EF6510044AFE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD797F271E1EF6510044AFE8 /* Main.storyboard */; };
@@ -20,7 +22,21 @@
 		BD9D94811E204F1100D329CB /* LoremIpsum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D94801E204F1100D329CB /* LoremIpsum.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		BD5E4B841E22E80600AD8DF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD797F181E1EF6500044AFE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD797F1F1E1EF6510044AFE8;
+			remoteInfo = VariableHeightTableCells;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		BD5E4B7F1E22E80600AD8DF9 /* VariableHeightTableCellsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VariableHeightTableCellsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD5E4B811E22E80600AD8DF9 /* VariableHeightTableCellsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableHeightTableCellsUITests.swift; sourceTree = "<group>"; };
+		BD5E4B831E22E80600AD8DF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD5E4B8A1E22F0EB00AD8DF9 /* CwlRandom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CwlRandom.swift; sourceTree = "<group>"; };
 		BD797F201E1EF6510044AFE8 /* VariableHeightTableCells.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VariableHeightTableCells.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD797F231E1EF6510044AFE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD797F251E1EF6510044AFE8 /* VariableHeightTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VariableHeightTableViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +53,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BD5E4B7C1E22E80600AD8DF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD797F1D1E1EF6510044AFE8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -47,10 +70,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD5E4B801E22E80600AD8DF9 /* VariableHeightTableCellsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BD5E4B811E22E80600AD8DF9 /* VariableHeightTableCellsUITests.swift */,
+				BD5E4B831E22E80600AD8DF9 /* Info.plist */,
+			);
+			path = VariableHeightTableCellsUITests;
+			sourceTree = "<group>";
+		};
 		BD797F171E1EF6500044AFE8 = {
 			isa = PBXGroup;
 			children = (
 				BD797F221E1EF6510044AFE8 /* VariableHeightTableCells */,
+				BD5E4B801E22E80600AD8DF9 /* VariableHeightTableCellsUITests */,
 				BD797F211E1EF6510044AFE8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				BD797F201E1EF6510044AFE8 /* VariableHeightTableCells.app */,
+				BD5E4B7F1E22E80600AD8DF9 /* VariableHeightTableCellsUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,6 +108,7 @@
 				BD9D947E1E1FF50F00D329CB /* HeightCalculationStrategy.swift */,
 				BD797F3B1E1F89850044AFE8 /* FullTextView.swift */,
 				BD797F251E1EF6510044AFE8 /* VariableHeightTableViewController.swift */,
+				BD5E4B8A1E22F0EB00AD8DF9 /* CwlRandom.swift */,
 				BD9D94801E204F1100D329CB /* LoremIpsum.swift */,
 				BD797F2A1E1EF6510044AFE8 /* Assets.xcassets */,
 				BD797F2C1E1EF6510044AFE8 /* LaunchScreen.storyboard */,
@@ -85,6 +120,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		BD5E4B7E1E22E80600AD8DF9 /* VariableHeightTableCellsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD5E4B861E22E80600AD8DF9 /* Build configuration list for PBXNativeTarget "VariableHeightTableCellsUITests" */;
+			buildPhases = (
+				BD5E4B7B1E22E80600AD8DF9 /* Sources */,
+				BD5E4B7C1E22E80600AD8DF9 /* Frameworks */,
+				BD5E4B7D1E22E80600AD8DF9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD5E4B851E22E80600AD8DF9 /* PBXTargetDependency */,
+			);
+			name = VariableHeightTableCellsUITests;
+			productName = VariableHeightTableCellsUITests;
+			productReference = BD5E4B7F1E22E80600AD8DF9 /* VariableHeightTableCellsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		BD797F1F1E1EF6510044AFE8 /* VariableHeightTableCells */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BD797F321E1EF6510044AFE8 /* Build configuration list for PBXNativeTarget "VariableHeightTableCells" */;
@@ -112,6 +165,12 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Brad Howes";
 				TargetAttributes = {
+					BD5E4B7E1E22E80600AD8DF9 = {
+						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = Z7R62JH5A8;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BD797F1F1E1EF6510044AFE8;
+					};
 					BD797F1F1E1EF6510044AFE8 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = Z7R62JH5A8;
@@ -133,11 +192,19 @@
 			projectRoot = "";
 			targets = (
 				BD797F1F1E1EF6510044AFE8 /* VariableHeightTableCells */,
+				BD5E4B7E1E22E80600AD8DF9 /* VariableHeightTableCellsUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BD5E4B7D1E22E80600AD8DF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD797F1E1E1EF6510044AFE8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -152,11 +219,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BD5E4B7B1E22E80600AD8DF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD5E4B821E22E80600AD8DF9 /* VariableHeightTableCellsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BD797F1C1E1EF6510044AFE8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BD9D947D1E1FCDA200D329CB /* DataSource.swift in Sources */,
+				BD5E4B8B1E22F0EB00AD8DF9 /* CwlRandom.swift in Sources */,
 				BD9D947F1E1FF50F00D329CB /* HeightCalculationStrategy.swift in Sources */,
 				BD9D94811E204F1100D329CB /* LoremIpsum.swift in Sources */,
 				BD797F3C1E1F89850044AFE8 /* FullTextView.swift in Sources */,
@@ -167,6 +243,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BD5E4B851E22E80600AD8DF9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD797F1F1E1EF6510044AFE8 /* VariableHeightTableCells */;
+			targetProxy = BD5E4B841E22E80600AD8DF9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BD797F271E1EF6510044AFE8 /* Main.storyboard */ = {
@@ -188,6 +272,34 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BD5E4B871E22E80600AD8DF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = Z7R62JH5A8;
+				INFOPLIST_FILE = VariableHeightTableCellsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brhcode.VariableHeightTableCellsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = VariableHeightTableCells;
+			};
+			name = Debug;
+		};
+		BD5E4B881E22E80600AD8DF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = Z7R62JH5A8;
+				INFOPLIST_FILE = VariableHeightTableCellsUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brhcode.VariableHeightTableCellsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = VariableHeightTableCells;
+			};
+			name = Release;
+		};
 		BD797F301E1EF6510044AFE8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -310,6 +422,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BD5E4B861E22E80600AD8DF9 /* Build configuration list for PBXNativeTarget "VariableHeightTableCellsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD5E4B871E22E80600AD8DF9 /* Debug */,
+				BD5E4B881E22E80600AD8DF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		BD797F1B1E1EF6500044AFE8 /* Build configuration list for PBXProject "VariableHeightTableCells" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

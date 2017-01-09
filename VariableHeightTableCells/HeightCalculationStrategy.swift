@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol HeightCalculationStrategy {
+protocol HeightCalculationStrategy {
     var cellWidth: CGFloat {get set}
 
     /**
@@ -23,14 +23,14 @@ public protocol HeightCalculationStrategy {
 /**
  Base class for height calculation strategies.
  */
-public class BaseHeightCalculationStrategy: HeightCalculationStrategy {
+class BaseHeightCalculationStrategy: HeightCalculationStrategy {
 
     fileprivate let tableView: UITableView
     fileprivate var verticalSpacing: CGFloat { return tableView.separatorInset.top + tableView.separatorInset.bottom }
     fileprivate let sizer: Cell
 
     /// Be aware when the cell width changes and take action when it does
-    public var cellWidth: CGFloat = 0.0 {
+    var cellWidth: CGFloat = 0.0 {
         didSet {
             if cellWidth != oldValue {
                 cellWidthChanged()
@@ -43,7 +43,7 @@ public class BaseHeightCalculationStrategy: HeightCalculationStrategy {
      - parameter cellIdent: the identifier to use for the cell that has variable height
      - parameter tableView: the table view that has variable height cells
      */
-    public init(cellIdent: String, tableView: UITableView) {
+    init(cellIdent: String, tableView: UITableView) {
         self.tableView = tableView
 
         // Fetch an instance of the cell view from the main bundle to use for sizing operations.
@@ -65,8 +65,8 @@ public class BaseHeightCalculationStrategy: HeightCalculationStrategy {
      - parameter indexPath: the index of the cell being measured
      - returns: calculated height of the cell as it would appear in the table
      */
-    public func getHeight(for content: Content, at indexPath: IndexPath) -> CGFloat {
-        return (sizer.setup(content: content).cellHeightForContent + verticalSpacing).rounded()
+    func getHeight(for content: Content, at indexPath: IndexPath) -> CGFloat {
+        return (sizer.setup(content: content).cellHeightForContent + verticalSpacing).rounded(.up)
     }
 }
 
@@ -74,7 +74,7 @@ public class BaseHeightCalculationStrategy: HeightCalculationStrategy {
  Cell height calculation strategy that leverages UITableView's `estimatedRowHeight` setting. As long as the estimate is
  fairly representative of the cells in the table, this is the best approach for speed.
  */
-public class EstimatedHeightCalculationStrategy: BaseHeightCalculationStrategy {
+class EstimatedHeightCalculationStrategy: BaseHeightCalculationStrategy {
 
     /**
      Initialize new instance.
@@ -95,7 +95,7 @@ public class EstimatedHeightCalculationStrategy: BaseHeightCalculationStrategy {
  Cell height calculation strategy that maintains a cache of height values. This is fast, but there are problems for 
  large table sizes due to the stall that takes place when recalculating them all.
  */
-public class CachedHeightArrayStrategy: BaseHeightCalculationStrategy {
+class CachedHeightArrayStrategy: BaseHeightCalculationStrategy {
 
     private var heights: [CGFloat] = [CGFloat]()
     private let dataSource: DataSource
@@ -106,7 +106,7 @@ public class CachedHeightArrayStrategy: BaseHeightCalculationStrategy {
      - parameter tableView: the table view that has variable height cells
      - parameter dataSource: the data source for the table
      */
-    public init(cellIdent: String, tableView: UITableView, dataSource: DataSource) {
+    init(cellIdent: String, tableView: UITableView, dataSource: DataSource) {
         self.dataSource = dataSource
         super.init(cellIdent: cellIdent, tableView: tableView)
     }
@@ -125,9 +125,9 @@ public class CachedHeightArrayStrategy: BaseHeightCalculationStrategy {
      - parameter indexPath: the index of the cell being measured
      - returns: calculated height of the cell as it would appear in the table
      */
-    override public func getHeight(for content: Content, at indexPath: IndexPath) -> CGFloat {
+    override func getHeight(for content: Content, at indexPath: IndexPath) -> CGFloat {
         if heights.count == 0 {
-            heights = dataSource.map { (sizer.setup(content: $0).cellHeightForContent + verticalSpacing).rounded() }
+            heights = dataSource.map { (sizer.setup(content: $0).cellHeightForContent + verticalSpacing).rounded(.up) }
         }
         return heights[indexPath.row]
     }

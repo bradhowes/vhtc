@@ -11,7 +11,7 @@ import UIKit
 /** 
  Derivation of a UITableViewCell which will properly size itself so that the internal UITextView is properly laid out.
  */
-public final class Cell: UITableViewCell {
+final class Cell: UITableViewCell {
     @IBOutlet weak var heading: UILabel!
     @IBOutlet weak var content: FullTextView!
     @IBOutlet weak var avatar: UIImageView!
@@ -21,7 +21,7 @@ public final class Cell: UITableViewCell {
      - parameter content: the content to fill in
      - returns: ourselves
      */
-    public func setup(content: Content) -> Cell {
+    func setup(content: Content) -> Cell {
         self.heading.text = content.title
         self.content.text = content.text
         self.avatar.image = content.image
@@ -30,13 +30,13 @@ public final class Cell: UITableViewCell {
     }
 
     /// Calculate and return the height of this cell using whatever content is currently in the views.
-    public var cellHeightForContent: CGFloat {
+    var cellHeightForContent: CGFloat {
         contentView.layoutIfNeeded()
-        return contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+        return (contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height + 0.5).rounded(.up)
     }
 
     /// The current cell width. Adjust to recalculate cell heights.
-    public var cellWidth: CGFloat = 0.0 {
+    var cellWidth: CGFloat = 0.0 {
         didSet {
             contentView.frame = CGRect(x: 0.0, y: 0.0, width: cellWidth, height: 9999.0)
             contentView.layoutIfNeeded()
