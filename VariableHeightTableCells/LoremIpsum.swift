@@ -141,9 +141,9 @@ public class LoremIpsumGenerator {
 
     public func imagePlaceholder(size: CGSize) -> UIImage {
         let color: UIColor = {
-            let red = CGFloat(arc4random()) / CGFloat(UInt32.max)
-            let green = CGFloat(arc4random()) / CGFloat(UInt32.max)
-            let blue = CGFloat(arc4random()) / CGFloat(UInt32.max)
+            let red = CGFloat(randomGenerator.randomClosed())
+            let green = CGFloat(randomGenerator.randomClosed())
+            let blue = CGFloat(randomGenerator.randomClosed())
             return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
         }()
         return imagePlaceholder(size: size, color: color)
