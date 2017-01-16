@@ -20,16 +20,10 @@ fileprivate extension String {
     }
 }
 
-//fileprivate extension Array {
-//    func random() -> Element {
-//        precondition(count > 0, "attempt to fetch element from empty array")
-//        return self[randomInt(lowerBound: 0, upperBound: count - 1)]
-//    }
-//}
-
-
-extension RandomGenerator {
-    mutating func pick<T>(_ seq: Array<T>) -> T { return seq[Int(randomHalfOpen() * Double(seq.count))] }
+fileprivate extension RandomGenerator {
+    mutating func pick<T>(_ seq: Array<T>) -> T {
+        precondition(seq.count > 0, "attempt to pick from empty array")
+        return seq[Int(randomHalfOpen() * Double(seq.count))] }
 }
 
 public class LoremIpsumGenerator {
