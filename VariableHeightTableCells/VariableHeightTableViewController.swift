@@ -8,6 +8,11 @@
 
 import UIKit
 
+enum Strategy {
+    case estimated
+    case cached
+}
+
 /**
  Adaptation of UITableViewController for one with cells that have varying heights. Relies on an instance of DataSource
  to provide data for the table, and a height calculating strategy class which hopefully provides fast answers to the
@@ -15,18 +20,17 @@ import UIKit
  */
 final class VariableHeightTableViewController: UITableViewController {
 
-    private var cellIdent: String!
     private var dataSource: DataSource!
     private var heightCalculationStrategy: HeightCalculationStrategy!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.cellIdent = "Cell"
-        self.dataSource = DataSource(cellIdent: cellIdent, count: 100)
+        self.dataSource = DataSource(count: 300)
         tableView.dataSource = dataSource
-        tableView.register(UINib(nibName: cellIdent, bundle: nil), forCellReuseIdentifier: cellIdent)
-        heightCalculationStrategy = makeStrategy(useFast: true)
+        for ident in CellIdent.all {
+            tableView.register(ident: ident)
+        }
+        heightCalculationStrategy = make(strategy: .cached)
     }
 
     /**
@@ -38,6 +42,10 @@ final class VariableHeightTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         heightCalculationStrategy.cellWidth = view.frame.width
         super.viewWillAppear(animated)
+        DispatchQueue.main.async {
+            self.tableView.scrollToRow(at: IndexPath(row: self.dataSource.count - 1, section: 0), at: .bottom,
+                                       animated: false)
+        }
     }
 
     /**
@@ -54,28 +62,47 @@ final class VariableHeightTableViewController: UITableViewController {
         }
     }
 
+    /**
+     Tell table view how many sections there are
+    
+     - parameter tableView: the table to inform
+     - returns: 1
+     */
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
+    /**
+     Tell table view the height of a specific row element
+    
+     - parameter tableView: the table to inform
+     - parameter indexPath: the index of the row to report on
+     - returns: the height
+     */
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return heightCalculationStrategy.getHeight(for: self.dataSource[indexPath.row], at: indexPath)
     }
 
+    /*
+     Notification that memory is running low.
+     */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
 
-    private func makeStrategy(useFast: Bool) -> HeightCalculationStrategy {
-        if useFast {
-            return EstimatedHeightCalculationStrategy(cellIdent: cellIdent,
-                                                      tableView: tableView,
-                                                      estimatedHeight: 86.0)
-        }
-        else {
-            return CachedHeightArrayStrategy(cellIdent: cellIdent,
-                                             tableView: tableView,
-                                             dataSource: dataSource)
+    /**
+     Create the desired height calculation strategy.
+    
+     - parameter useFast: create
+     - returns: strategy instance
+     */
+    private func make(strategy: Strategy) -> HeightCalculationStrategy {
+        switch strategy {
+        case .estimated:
+            return EstimatedHeightCalculationStrategy(idents: CellIdent.all, tableView: tableView,
+                                                      estimatedHeight: 80.0)
+        case .cached: return CachedHeightArrayStrategy(idents: CellIdent.all, tableView: tableView,
+                                                       dataSource: dataSource)
         }
     }
 }

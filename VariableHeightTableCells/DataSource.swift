@@ -8,49 +8,41 @@
 
 import UIKit
 
-struct Content {
-    let title: String
-    let text: String
-    let image: UIImage
-}
-
 extension RandomGenerator {
     public mutating func bounded(lower: Int, upper: Int) -> Int {
         return Int(randomClosed() * Double(upper - lower)) + lower
     }
 }
 
-//public func randomInt(lowerBound: Int, upperBound: Int) -> Int {
-//    precondition(lowerBound <= upperBound, "invalid bounds")
-//    return Int(arc4random_uniform(UInt32(upperBound - lowerBound + 1))) + lowerBound
-//}
-
-
-/** 
+/**
  Content provider for the table view. Each cell contains a title in a UILabel, a block of text in a UITextField, and an
  image shown in a UIImageView.
  */
 final class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
 
-    let cellIdent: String
-    var count: Int { return content.count }
-    private var content = [Content]()
+    var count: Int { return contents.count }
+    private var contents = [Content]()
 
     /**
      Intiialize content data
      - parameter cellIdent: the identifier to use when registering a cell in the table view
      - parameter count: the number of cells to create in the table
      */
-    init(cellIdent: String, count: Int) {
-        self.cellIdent = cellIdent
-
+    init(count: Int) {
         var randomGenerator = Xoroshiro(seed: (123, 123))
         let lig = LoremIpsumGenerator(randomGenerator: randomGenerator)
-        for _ in 0..<count {
+        let dates = lig.poissonIntervals(count: count, duration: 60 * 60 * 24 * 30)
+        contents.append(Content(when: dates.first!))
+        for index in 0..<count {
             let title = lig.title()
-            let text = lig.sentences(count: randomGenerator.bounded(lower: 1, upper: 6)) + " END"
+            let text = lig.sentences(count: randomGenerator.bounded(lower: 1, upper: 3)) + " END"
             let image = lig.imagePlaceholder(size: CGSize(width: 48.0, height: 48.0))
-            content.append(Content(title: title, text: text, image: image))
+            let when = dates[index]
+            let content = Content(title: title, text: text, image: image, when: when)
+            if !contents.last!.sameDay(when) {
+                contents.append(Content(when: when))
+            }
+            contents.append(content)
         }
     }
 
@@ -61,7 +53,7 @@ final class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
      - returns: row count
      */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return content.count
+        return contents.count
     }
 
     /**
@@ -71,15 +63,22 @@ final class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
      - returns: the UITableViewCell instance holding the data to show in the cell
      */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdent) as! Cell
-        return cell.setup(content: content[indexPath.row])
+        let content = self.contents[indexPath.row]
+        switch content.ident {
+        case .DataCell:
+            let cell: DataCell = tableView.dequeueReusableCell(withIdentifier: content.ident.rawValue) as! DataCell
+            return cell.setup(content: content)
+        case .DayMarkerCell:
+            let cell: DayMarkerCell = tableView.dequeueReusableCell(withIdentifier: content.ident.rawValue) as! DayMarkerCell
+            return cell.setup(content: content)
+        }
     }
 
     /** 
      Support indexing, forwarding request to the internal content array.
      */
     subscript(index: Int) -> Content {
-        return content[index]
+        return contents[index]
     }
 
     /**
@@ -88,6 +87,6 @@ final class DataSource: NSObject, UITableViewDataSource, UITableViewDelegate {
      - returns: array of cell heights
      */
     func map(_ closure: (Content) -> CGFloat) -> [CGFloat] {
-        return content.map(closure)
+        return contents.map(closure)
     }
 }

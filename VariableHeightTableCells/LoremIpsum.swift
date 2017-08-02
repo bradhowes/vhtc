@@ -58,6 +58,24 @@ public class LoremIpsumGenerator {
         return Int(randomGenerator.randomClosed() * Double(upperBound - lowerBound)) + lowerBound
     }
 
+    public func poissonIntervals(count: Int, duration: TimeInterval) -> [Date] {
+        let calendar = Calendar.current
+        let lambda = duration / TimeInterval(count)
+        print("duration: \(duration) lambda: \(lambda)")
+        var dates = [Date]()
+        let start = Date()
+        var p = 0.0
+        for _ in 0..<count {
+            p += -log2(1.0 - randomGenerator.randomHalfOpen()) * lambda
+            let when = calendar.date(byAdding: .second, value: Int(-p), to: start)!
+            dates.append(when)
+        }
+
+        dates.reverse()
+        print(dates)
+        return dates
+    }
+
     public func word() -> String {
         return words(count: 1)
     }

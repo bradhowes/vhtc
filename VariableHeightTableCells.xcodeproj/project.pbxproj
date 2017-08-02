@@ -14,12 +14,20 @@
 		BD797F291E1EF6510044AFE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD797F271E1EF6510044AFE8 /* Main.storyboard */; };
 		BD797F2B1E1EF6510044AFE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD797F2A1E1EF6510044AFE8 /* Assets.xcassets */; };
 		BD797F2E1E1EF6510044AFE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD797F2C1E1EF6510044AFE8 /* LaunchScreen.storyboard */; };
-		BD797F361E1EF7410044AFE8 /* Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD797F351E1EF7410044AFE8 /* Cell.xib */; };
-		BD797F381E1EF9350044AFE8 /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD797F371E1EF9350044AFE8 /* Cell.swift */; };
+		BD797F361E1EF7410044AFE8 /* DataCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BD797F351E1EF7410044AFE8 /* DataCell.xib */; };
+		BD797F381E1EF9350044AFE8 /* DataCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD797F371E1EF9350044AFE8 /* DataCell.swift */; };
 		BD797F3C1E1F89850044AFE8 /* FullTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD797F3B1E1F89850044AFE8 /* FullTextView.swift */; };
 		BD9D947D1E1FCDA200D329CB /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D947C1E1FCDA200D329CB /* DataSource.swift */; };
 		BD9D947F1E1FF50F00D329CB /* HeightCalculationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D947E1E1FF50F00D329CB /* HeightCalculationStrategy.swift */; };
 		BD9D94811E204F1100D329CB /* LoremIpsum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9D94801E204F1100D329CB /* LoremIpsum.swift */; };
+		BDC5DAF41F310D30005FAB2D /* DayMarkerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDC5DAF31F310D30005FAB2D /* DayMarkerCell.xib */; };
+		BDC5DAF61F310DCA005FAB2D /* DayMarkerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5DAF51F310DCA005FAB2D /* DayMarkerCell.swift */; };
+		BDC5DAF81F31206D005FAB2D /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5DAF71F31206D005FAB2D /* Cell.swift */; };
+		BDC5DAFA1F312818005FAB2D /* UINib+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5DAF91F312818005FAB2D /* UINib+Extensions.swift */; };
+		BDC5DAFC1F312A21005FAB2D /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5DAFB1F312A21005FAB2D /* UITableView+Extensions.swift */; };
+		BDC5DAFE1F312A7F005FAB2D /* CellIdent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5DAFD1F312A7F005FAB2D /* CellIdent.swift */; };
+		BDC5DB001F312AA2005FAB2D /* SizableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5DAFF1F312AA2005FAB2D /* SizableCell.swift */; };
+		BDC5DB021F31CE90005FAB2D /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDC5DB011F31CE90005FAB2D /* Content.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,12 +52,20 @@
 		BD797F2A1E1EF6510044AFE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BD797F2D1E1EF6510044AFE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD797F2F1E1EF6510044AFE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BD797F351E1EF7410044AFE8 /* Cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Cell.xib; sourceTree = "<group>"; };
-		BD797F371E1EF9350044AFE8 /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		BD797F351E1EF7410044AFE8 /* DataCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataCell.xib; sourceTree = "<group>"; };
+		BD797F371E1EF9350044AFE8 /* DataCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCell.swift; sourceTree = "<group>"; };
 		BD797F3B1E1F89850044AFE8 /* FullTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullTextView.swift; sourceTree = "<group>"; };
 		BD9D947C1E1FCDA200D329CB /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		BD9D947E1E1FF50F00D329CB /* HeightCalculationStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeightCalculationStrategy.swift; sourceTree = "<group>"; };
 		BD9D94801E204F1100D329CB /* LoremIpsum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoremIpsum.swift; sourceTree = "<group>"; };
+		BDC5DAF31F310D30005FAB2D /* DayMarkerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayMarkerCell.xib; sourceTree = "<group>"; };
+		BDC5DAF51F310DCA005FAB2D /* DayMarkerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayMarkerCell.swift; sourceTree = "<group>"; };
+		BDC5DAF71F31206D005FAB2D /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		BDC5DAF91F312818005FAB2D /* UINib+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINib+Extensions.swift"; sourceTree = "<group>"; };
+		BDC5DAFB1F312A21005FAB2D /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		BDC5DAFD1F312A7F005FAB2D /* CellIdent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellIdent.swift; path = ../CellIdent.swift; sourceTree = "<group>"; };
+		BDC5DAFF1F312AA2005FAB2D /* SizableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SizableCell.swift; path = ../SizableCell.swift; sourceTree = "<group>"; };
+		BDC5DB011F31CE90005FAB2D /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,11 +118,19 @@
 			children = (
 				BD797F231E1EF6510044AFE8 /* AppDelegate.swift */,
 				BD797F271E1EF6510044AFE8 /* Main.storyboard */,
-				BD797F351E1EF7410044AFE8 /* Cell.xib */,
-				BD797F371E1EF9350044AFE8 /* Cell.swift */,
+				BDC5DAF71F31206D005FAB2D /* Cell.swift */,
+				BDC5DAFD1F312A7F005FAB2D /* CellIdent.swift */,
+				BD797F351E1EF7410044AFE8 /* DataCell.xib */,
+				BD797F371E1EF9350044AFE8 /* DataCell.swift */,
+				BDC5DAF31F310D30005FAB2D /* DayMarkerCell.xib */,
+				BDC5DAF51F310DCA005FAB2D /* DayMarkerCell.swift */,
+				BDC5DAF91F312818005FAB2D /* UINib+Extensions.swift */,
+				BDC5DAFB1F312A21005FAB2D /* UITableView+Extensions.swift */,
 				BD9D947C1E1FCDA200D329CB /* DataSource.swift */,
+				BDC5DB011F31CE90005FAB2D /* Content.swift */,
 				BD9D947E1E1FF50F00D329CB /* HeightCalculationStrategy.swift */,
 				BD797F3B1E1F89850044AFE8 /* FullTextView.swift */,
+				BDC5DAFF1F312AA2005FAB2D /* SizableCell.swift */,
 				BD797F251E1EF6510044AFE8 /* VariableHeightTableViewController.swift */,
 				BD5E4B8A1E22F0EB00AD8DF9 /* CwlRandom.swift */,
 				BD9D94801E204F1100D329CB /* LoremIpsum.swift */,
@@ -209,8 +233,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDC5DAF41F310D30005FAB2D /* DayMarkerCell.xib in Resources */,
 				BD797F2E1E1EF6510044AFE8 /* LaunchScreen.storyboard in Resources */,
-				BD797F361E1EF7410044AFE8 /* Cell.xib in Resources */,
+				BD797F361E1EF7410044AFE8 /* DataCell.xib in Resources */,
 				BD797F2B1E1EF6510044AFE8 /* Assets.xcassets in Resources */,
 				BD797F291E1EF6510044AFE8 /* Main.storyboard in Resources */,
 			);
@@ -234,11 +259,18 @@
 				BD9D947D1E1FCDA200D329CB /* DataSource.swift in Sources */,
 				BD5E4B8B1E22F0EB00AD8DF9 /* CwlRandom.swift in Sources */,
 				BD9D947F1E1FF50F00D329CB /* HeightCalculationStrategy.swift in Sources */,
+				BDC5DAFC1F312A21005FAB2D /* UITableView+Extensions.swift in Sources */,
 				BD9D94811E204F1100D329CB /* LoremIpsum.swift in Sources */,
+				BDC5DAFA1F312818005FAB2D /* UINib+Extensions.swift in Sources */,
+				BDC5DAFE1F312A7F005FAB2D /* CellIdent.swift in Sources */,
 				BD797F3C1E1F89850044AFE8 /* FullTextView.swift in Sources */,
+				BDC5DB021F31CE90005FAB2D /* Content.swift in Sources */,
+				BDC5DB001F312AA2005FAB2D /* SizableCell.swift in Sources */,
+				BDC5DAF61F310DCA005FAB2D /* DayMarkerCell.swift in Sources */,
 				BD797F261E1EF6510044AFE8 /* VariableHeightTableViewController.swift in Sources */,
+				BDC5DAF81F31206D005FAB2D /* Cell.swift in Sources */,
 				BD797F241E1EF6510044AFE8 /* AppDelegate.swift in Sources */,
-				BD797F381E1EF9350044AFE8 /* Cell.swift in Sources */,
+				BD797F381E1EF9350044AFE8 /* DataCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -429,6 +461,7 @@
 				BD5E4B881E22E80600AD8DF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BD797F1B1E1EF6500044AFE8 /* Build configuration list for PBXProject "VariableHeightTableCells" */ = {
 			isa = XCConfigurationList;

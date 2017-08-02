@@ -2,30 +2,17 @@
 //  Cell.swift
 //  VariableHeightTableCells
 //
-//  Created by Brad Howes on 1/5/17.
+//  Created by Brad Howes on 8/1/17.
 //  Copyright © 2017 Brad Howes. All rights reserved.
 //
 
 import UIKit
 
-/** 
- Derivation of a UITableViewCell which will properly size itself so that the internal UITextView is properly laid out.
- */
-final class Cell: UITableViewCell {
-    @IBOutlet weak var heading: UILabel!
-    @IBOutlet weak var content: FullTextView!
-    @IBOutlet weak var avatar: UIImageView!
+class Cell: UITableViewCell, SizableCell {
 
-    /**
-     Fill in the cell fields with given content values
-     - parameter content: the content to fill in
-     - returns: ourselves
-     */
+    var cellIdent: CellIdent { fatalError("deriving class must override") }
+
     func setup(content: Content) -> Cell {
-        self.heading.text = content.title
-        self.content.text = content.text
-        self.avatar.image = content.image
-        contentView.layoutIfNeeded()
         return self
     }
 
