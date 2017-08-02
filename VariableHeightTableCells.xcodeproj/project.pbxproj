@@ -63,8 +63,8 @@
 		BDC5DAF71F31206D005FAB2D /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		BDC5DAF91F312818005FAB2D /* UINib+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINib+Extensions.swift"; sourceTree = "<group>"; };
 		BDC5DAFB1F312A21005FAB2D /* UITableView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
-		BDC5DAFD1F312A7F005FAB2D /* CellIdent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellIdent.swift; path = ../CellIdent.swift; sourceTree = "<group>"; };
-		BDC5DAFF1F312AA2005FAB2D /* SizableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SizableCell.swift; path = ../SizableCell.swift; sourceTree = "<group>"; };
+		BDC5DAFD1F312A7F005FAB2D /* CellIdent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellIdent.swift; sourceTree = "<group>"; };
+		BDC5DAFF1F312AA2005FAB2D /* SizableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizableCell.swift; sourceTree = "<group>"; };
 		BDC5DB011F31CE90005FAB2D /* Content.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
