@@ -44,7 +44,7 @@ final class DataCell: Cell {
         // Append to the text a string of non-breaking spaces which will basically force the text layout to avoid
         // overlapping the timestamp.
         //
-        self.content.text = content.text + " " + String(repeating: "\u{00A0}", count: s.characters.count * 2)
+        self.content.text = content.text + " " + String(repeating: "\u{00A0}", count: s.count * 2)
         self.avatar.image = content.image
         self.contentView.layoutIfNeeded()
         return self

@@ -40,9 +40,11 @@ final class VariableHeightTableViewController: UITableViewController {
      - parameter animated: true if the view will appear in an animation
      */
     override func viewWillAppear(_ animated: Bool) {
-        heightCalculationStrategy.cellWidth = view.frame.width
         super.viewWillAppear(animated)
+        
+        // SOP to scroll to a given row - do so in DispatchQueue.main.async block
         DispatchQueue.main.async {
+            self.heightCalculationStrategy.cellWidth = self.view.frame.width
             self.tableView.scrollToRow(at: IndexPath(row: self.dataSource.count - 1, section: 0), at: .bottom,
                                        animated: false)
         }

@@ -23,7 +23,7 @@ class VariableHeightTableCellsUITests: XCTestCase {
     
     func testExample() {
         print(app.debugDescription)
-        XCUIDevice.shared().orientation = .portrait
+        XCUIDevice.shared.orientation = .portrait
         XCTAssertEqual(XCUIApplication().tables.cells.count, 343)
     }
 }

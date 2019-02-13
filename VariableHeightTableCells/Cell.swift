@@ -19,7 +19,7 @@ class Cell: UITableViewCell, SizableCell {
     /// Calculate and return the height of this cell using whatever content is currently in the views.
     var cellHeightForContent: CGFloat {
         contentView.layoutIfNeeded()
-        return (contentView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height + 0.5).rounded(.up)
+        return (contentView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height + 0.5).rounded(.up)
     }
 
     /// The current cell width. Adjust to recalculate cell heights.

@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol HeightCalculationStrategy {
+protocol HeightCalculationStrategy: class {
 
     var cellWidth: CGFloat {get set}
 
