@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,17 +19,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="420" placeholderIntrinsicHeight="12" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOj-5q-Ioh">
-                        <rect key="frame" x="8" y="8" width="420" height="12"/>
+                        <rect key="frame" x="20" y="11" width="396" height="12"/>
                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rIx-wL-7OG" userLabel="Background">
-                        <rect key="frame" x="64" y="28" width="364" height="282"/>
+                        <rect key="frame" x="76" y="31" width="352" height="278.5"/>
                         <subviews>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="312" placeholderIntrinsicHeight="174" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aGl-Ed-TOj" customClass="FullTextView" customModule="VariableHeightTableCells" customModuleProvider="target">
-                                <rect key="frame" x="8" y="8" width="348" height="266"/>
+                                <rect key="frame" x="8" y="8" width="336" height="262.5"/>
                                 <color key="backgroundColor" red="0.18978153170000001" green="0.18977585429999999" blue="0.1897790432" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -44,7 +44,7 @@
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" calendarEvent="YES"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:59 PM" textAlignment="right" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="q0X-YO-Og8" userLabel="Time">
-                                <rect key="frame" x="296.5" y="250" width="55.5" height="16"/>
+                                <rect key="frame" x="284.5" y="250.5" width="55.5" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.92540746929999995" green="0.77492719889999995" blue="0.56762045620000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -52,7 +52,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="q0X-YO-Og8" secondAttribute="bottom" constant="16" id="BZh-XA-rXj"/>
+                            <constraint firstAttribute="bottom" secondItem="q0X-YO-Og8" secondAttribute="bottom" constant="12" id="BZh-XA-rXj"/>
                             <constraint firstItem="aGl-Ed-TOj" firstAttribute="leading" secondItem="rIx-wL-7OG" secondAttribute="leading" constant="8" id="EvY-d4-2EG"/>
                             <constraint firstAttribute="bottom" secondItem="aGl-Ed-TOj" secondAttribute="bottom" constant="8" id="UjZ-7c-5ei"/>
                             <constraint firstAttribute="trailing" secondItem="q0X-YO-Og8" secondAttribute="trailing" constant="12" id="bhA-DN-Izq"/>
@@ -61,7 +61,7 @@
                         </constraints>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VfP-LG-fka">
-                        <rect key="frame" x="8" y="28" width="48" height="48"/>
+                        <rect key="frame" x="20" y="31" width="48" height="48"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="48" id="0zh-ne-05i"/>
                             <constraint firstAttribute="width" constant="48" id="cLA-ae-uoq"/>
